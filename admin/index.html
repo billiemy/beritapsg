@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>BeritaPSG CMS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>BeritaPSG CMS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
-<div id="app"></div>
+<div id="pagescms-root"></div>
 
-<script src="https://pagescms.org/js/p.js"></script>
+<script src="https://unpkg.com/pagescms@latest/dist/pagescms.js"></script>
 
 <script>
 PagesCMS.init({
   repo: "billiemy/beritapsg",
   branch: "main",
-  mount: "#app"
-})
+  mount: "#pagescms-root"
+});
 </script>
 
 </body>
