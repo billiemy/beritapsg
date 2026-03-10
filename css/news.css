@@ -1,0 +1,79 @@
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+background:#001122;
+font-family:'Inter',sans-serif;
+-webkit-font-smoothing:antialiased;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+/* ========================
+ARTICLE TYPOGRAPHY
+======================== */
+
+article p{
+margin-bottom:16px;
+}
+
+article h2{
+margin-top:30px;
+margin-bottom:10px;
+}
+
+article img{
+border-radius:16px;
+}
+
+/* BACA JUGA */
+
+article .baca-juga a{
+font-weight:600;
+}
+
+/* FAQ */
+
+details summary{
+list-style:none;
+}
+
+details summary::-webkit-details-marker{
+display:none;
+}
+
+details[open]{
+border:1px solid rgba(255,255,255,0.08);
+}
+
+/* ======================
+FOOTER
+====================== */
+
+footer a{
+text-decoration:none;
+}
+
+footer ul li a{
+display:inline-block;
+}
+
+footer ul li a:hover{
+transform:translateX(4px);
+}
+
+/* MOBILE BOTTOM NAV */
+
+nav a svg{
+transition:transform .2s ease;
+}
+
+nav a:hover svg{
+transform:scale(1.1);
+}

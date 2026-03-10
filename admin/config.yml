@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: billiemy/beritapsg
+  branch: main
+
+media_folder: "imag/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: "posts"
+    label: "Berita"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Tanggal", name: "date", widget: "datetime"}
+      - {label: "Meta Description", name: "description", widget: "text"}
+      - {label: "Canonical", name: "canonical", widget: "string"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Isi Artikel", name: "body", widget: "markdown"}

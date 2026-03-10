@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+
+<!-- BASIC META -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Berita PSG Terbaru | Jadwal, Skor, Transfer Paris Saint-Germain</title>
+<meta name="description" content="Berita PSG terbaru, jadwal pertandingan, skor langsung, dan informasi transfer Paris Saint-Germain." />
+<link rel="icon" type="image/png" href="/img/psg-news.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- TAILWIND CUSTOM COLOR (PSG THEME) -->
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+colors: {
+'psg-darkblue': '#002244',
+'psg-red': '#DA291C',
+'psg-bg': '#001122',
+'psg-card': '#0a1f38',
+'psg-text': '#e0f0ff',
+'psg-gray': '#7a8db0',
+'psg-border': '#1a3a5a'
+}
+}
+}
+}
+</script>
+
+<!-- HOMEPAGE CSS -->
+<link rel="stylesheet" href="/css/home.css">
+
+<!-- MAIN JAVASCRIPT -->
+<script src="/js/main.js" defer></script>
+
+</head>
+
+<body class="bg-psg-bg text-psg-text min-h-screen font-['Inter',system-ui,sans-serif] antialiased flex flex-col">
+
+  <!-- Header -->
+  
+
+<!-- ================== HEADER UPGRADE ================== -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-psg-darkblue/90 backdrop-blur-xl border-b border-psg-border/70 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center gap-4">
+        <div class="relative group header-logo">
+          <img 
+            src="https://beritapsg.com/img/logo-psg.png" 
+            alt="PSG" 
+            class="w-11 h-11 rounded-full object-cover ring-2 ring-psg-red/40 group-hover:ring-psg-red/70 transition-all duration-500 transform group-hover:scale-110"
+          />
+          <div class="absolute -top-1 -right-1 w-4 h-4 bg-psg-red rounded-full border-2 border-psg-darkblue animate-ping opacity-70"></div>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white to-psg-red bg-clip-text text-transparent">
+          BERITA PSG
+        </h1>
+      </div>
+
+    <!-- Nav Desktop -->
+    <div class="hidden md:flex items-center gap-8 text-base font-medium">
+      <a href="/" class="nav-link text-psg-text hover:text-white transition-colors duration-300">
+        Beranda
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-psg-red group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="/berita" class="relative text-psg-text hover:text-white transition-colors duration-300 group">
+        Berita
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-psg-red group-hover:w-full transition-all duration-300"></span>
+      </a>
+      <a href="/jadwal" class="relative text-psg-text hover:text-white transition-colors duration-300 group">
+        Jadwal
+        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-psg-red group-hover:w-full transition-all duration-300"></span>
+      </a>
+
+      <!-- Dropdown Bahasa (toggle klik) -->
+      <div class="relative" x-data="{ open: false }">
+        <button 
+          @click="open = !open"
+          class="flex items-center gap-2 px-4 py-2 rounded-full bg-psg-red/10 border border-psg-red/40 text-psg-red hover:bg-psg-red/20 hover:border-psg-red/60 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-psg-red/40"
+          type="button"
+        >
+          <span class="font-semibold">Bahasa</span>
+          <svg 
+            class="w-5 h-5 transition-transform duration-300" 
+            :class="open ? 'rotate-180' : ''" 
+            fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        <div 
+          x-show="open"
+          @click.outside="open = false"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 scale-95 translate-y-2"
+          x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+          x-transition:leave-end="opacity-0 scale-95 translate-y-2"
+          class="absolute right-0 mt-3 w-44 bg-psg-card/95 backdrop-blur-lg border border-psg-border/70 rounded-xl shadow-2xl overflow-hidden z-50"
+        >
+          <a 
+            href="/en" 
+            @click="open = false"
+            class="block px-5 py-3.5 text-sm text-psg-text hover:bg-psg-red/15 hover:text-white transition flex items-center gap-3"
+          >
+            <span class="text-lg">🇬🇧</span> English (EN)
+          </a>
+          <a 
+            href="/fr" 
+            @click="open = false"
+            class="block px-5 py-3.5 text-sm text-psg-text hover:bg-psg-red/15 hover:text-white transition flex items-center gap-3"
+          >
+            <span class="text-lg">🇫🇷</span> Français (FR)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tombol Hamburger Mobile (+ icon) -->
+    <button 
+class="md:hidden relative p-3 rounded-full mobile-menu-btn focus:outline-none focus:ring-2 focus:ring-psg-red/40"
+onclick="toggleMobileMenu()"
+>
+      <svg 
+        id="hamburger-icon"
+        class="w-8 h-8 text-psg-text transition-all duration-500 ease-in-out"
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="3" 
+        viewBox="0 0 24 24"
+      >
+        <path 
+          id="plus-line-1"
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M12 5v14" 
+          class="transition-all duration-500"
+        />
+        <path 
+          id="plus-line-2"
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          d="M5 12h14" 
+          class="transition-all duration-500"
+        />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- ================== MOBILE MENU ESTETIK (slide dari kanan) ================== -->
+<div 
+  id="mobile-menu"
+  class="fixed inset-y-0 right-0 z-50 w-4/5 max-w-xs bg-gradient-to-br from-psg-darkblue via-psg-bg to-psg-darkblue/95 backdrop-blur-2xl border-l-2 border-psg-red/30 shadow-2xl transform translate-x-full transition-transform duration-500 ease-in-out"
+>
+  <!-- Header Mobile Menu -->
+  <div class="flex items-center justify-between p-6 border-b border-psg-border/40">
+    <div class="flex items-center gap-3">
+      <img src="https://beritapsg.com/img/logo-psg.png" alt="PSG" class="w-10 h-10 rounded-full ring-2 ring-psg-red/40"/>
+      <span class="text-xl font-bold text-white">Menu</span>
+    </div>
+    <button 
+      class="p-3 rounded-full hover:bg-psg-red/20 transition"
+      onclick="toggleMobileMenu()"
+    >
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Nav Items -->
+  <nav class="flex flex-col p-6 space-y-2">
+    <a href="/" class="group flex items-center gap-4 py-4 px-5 rounded-2xl hover:bg-psg-red/10 hover:pl-8 transition-all duration-300 border-l-4 border-transparent hover:border-psg-red">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+        
+      </svg>
+      <span class="text-lg font-medium">Beranda</span>
+    </a>
+
+    <a href="/berita" class="group flex items-center gap-4 py-4 px-5 rounded-2xl hover:bg-psg-red/10 hover:pl-8 transition-all duration-300 border-l-4 border-transparent hover:border-psg-red">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-news"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" /><path d="M8 8l4 0" /><path d="M8 12l4 0" /><path d="M8 16l4 0" /></svg>
+        
+      </svg>
+      <span class="text-lg font-medium">Berita</span>
+    </a>
+
+    <a href="/jadwal" class="group flex items-center gap-4 py-4 px-5 rounded-2xl hover:bg-psg-red/10 hover:pl-8 transition-all duration-300 border-l-4 border-transparent hover:border-psg-red">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-news"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" /><path d="M8 8l4 0" /><path d="M8 12l4 0" /><path d="M8 16l4 0" /></svg>
+        
+      </svg>
+      <span class="text-lg font-medium">Jadwal</span>
+    </a>
+
+    <!-- Divider -->
+    <div class="h-px bg-gradient-to-r from-transparent via-psg-border/70 to-transparent my-4"></div>
+
+    <!-- Bahasa -->
+    <div class="px-5">
+      <p class="text-psg-gray text-sm font-medium mb-4">Pilih Bahasa</p>
+      <div class="space-y-3">
+        <a href="/en" class="flex items-center gap-4 py-3.5 px-5 rounded-xl hover:bg-psg-red/10 transition">
+          <span class="text-2xl">🇬🇧</span>
+          <span class="text-lg">English (EN)</span>
+        </a>
+        <a href="/fr" class="flex items-center gap-4 py-3.5 px-5 rounded-xl hover:bg-psg-red/10 transition">
+          <span class="text-2xl">🇫🇷</span>
+          <span class="text-lg">Français (FR)</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+
+  <!-- Main Content -->
+  <div class="flex-grow flex flex-col pt-14">
+
+    <div class="flex flex-grow max-w-7xl mx-auto w-full">
+
+      <!-- Left Sidebar (sama) -->
+      <aside class="hidden lg:block w-72 flex-shrink-0 px-4 py-6 sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto border-r border-psg-border">
+        <nav class="flex flex-col gap-2 text-xl">
+          <a href="/" class="flex items-center gap-5 p-4 rounded-3xl hover:bg-psg-red/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+            <span>Beranda</span>
+          </a>
+          <a href="/berita" class="flex items-center gap-5 p-4 rounded-3xl hover:bg-psg-red/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-news"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" /><path d="M8 8l4 0" /><path d="M8 12l4 0" /><path d="M8 16l4 0" /></svg>
+            <span>Berita</span>
+          </a>
+          <a href="/jadwal" class="flex items-center gap-5 p-4 rounded-3xl hover:bg-psg-red/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-clock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.5 21h-4.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h10" /><path d="M14 18a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M18 16.5v1.5l.5 .5" /></svg>
+            <span>Jadwal</span>
+          </a>
+          <a href="/klasemen" class="flex items-center gap-5 p-4 rounded-3xl hover:bg-psg-red/10 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trending-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 17l6 -6l4 4l8 -8" /><path d="M14 7l7 0l0 7" /></svg>
+            <span>Klasemen</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Main Feed -->
+      <main class="flex-1 border-x border-psg-border min-h-screen pb-24 md:pb-0">
+
+        <!-- Headline (sama seperti versi sebelumnya) -->
+        <article class="article-card border-b border-psg-border p-5">
+          <div class="flex gap-4 lg:gap-5">
+            <div class="hidden lg:block flex-shrink-0">
+              <img src="https://beritapsg.com/img/logo-psg.png" alt="PSG" class="w-12 h-12 rounded-full mt-1"/>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center gap-2 text-sm text-psg-gray">
+                <span class="font-bold text-psg-text">Berita PSG</span>
+                <span>•</span>
+                <time>7 Mar 2026</time>
+              </div>
+              <h2 class="text-2xl lg:text-3xl font-bold mt-1 leading-tight">Adrien Rabiot Sebut Zlatan Ibrahimovic Sosok Inspiratif</h2>
+              <p class="mt-3 lg:mt-4 text-base lg:text-lg">Karakter kuat Ibrahimovic membuat banyak pemain muda PSG termotivasi untuk bekerja lebih keras...</p>
+              
+              <img src="https://media.gettyimages.com/id/533416430/photo/paris-france-zlatan-ibrahimovic-psg-in-action-during-the-final-french-cup-between-paris-saint.jpg?s=612x612&w=0&k=20&c=mCDSfffsMsDa7MuaSuSyG1p5PPfGyA6GudIH5pvfKWs=" alt="" class="rounded-2xl mt-4 lg:mt-5 w-full max-h-[500px] object-cover"/>
+
+              <a href="/berita/adrien-rabiot-sebut-zlatan-ibrahimovic-sosok-inspiratif" class="mt-5 lg:mt-6 inline-block bg-psg-red text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition shadow-lg shadow-psg-red/20">
+                Baca Selengkapnya →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Berita lainnya (contoh 1) -->
+        <article class="article-card border-b border-psg-border p-5">
+          <div class="flex gap-4">
+            <img src="https://beritapsg.com/img/logo-psg.png" alt="" class="w-10 h-10 rounded-full mt-1 flex-shrink-0"/>
+            <div class="flex-1">
+              <div class="text-sm text-psg-gray">6 Mar 2026</div>
+              <h3 class="font-bold text-xl mt-1">PSG Kalah 1-3 dari Monaco: Luis Enrique Akui Tim Sangat Tidak Presisi</h3>
+              <p class="mt-2 text-psg-gray">Luis Enrique mengakui timnya gagal tampil sesuai standar...</p>
+              <a href="/berita/psg-kalah-monaco-luis-enrique-analisis" class="mt-4 inline-block text-psg-red font-medium hover:underline">Baca Selengkapnya →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card border-b border-psg-border p-5">
+          <div class="flex gap-4">
+            <img src="https://beritapsg.com/img/logo-psg.png" alt="" class="w-10 h-10 rounded-full mt-1 flex-shrink-0"/>
+            <div class="flex-1">
+              <div class="text-sm text-psg-gray">6 Mar 2026</div>
+              <h3 class="font-bold text-xl mt-1">PSG Kalah 1-3 dari Monaco: Luis Enrique Akui Tim Sangat Tidak Presisi</h3>
+              <p class="mt-2 text-psg-gray">Luis Enrique mengakui timnya gagal tampil sesuai standar...</p>
+              <a href="/berita/psg-kalah-monaco-luis-enrique-analisis" class="mt-4 inline-block text-psg-red font-medium hover:underline">Baca Selengkapnya →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card border-b border-psg-border p-5">
+          <div class="flex gap-4">
+            <img src="https://beritapsg.com/img/logo-psg.png" alt="" class="w-10 h-10 rounded-full mt-1 flex-shrink-0"/>
+            <div class="flex-1">
+              <div class="text-sm text-psg-gray">6 Mar 2026</div>
+              <h3 class="font-bold text-xl mt-1">PSG Kalah 1-3 dari Monaco: Luis Enrique Akui Tim Sangat Tidak Presisi</h3>
+              <p class="mt-2 text-psg-gray">Luis Enrique mengakui timnya gagal tampil sesuai standar...</p>
+              <a href="/berita/psg-kalah-monaco-luis-enrique-analisis" class="mt-4 inline-block text-psg-red font-medium hover:underline">Baca Selengkapnya →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card border-b border-psg-border p-5">
+          <div class="flex gap-4">
+            <img src="https://beritapsg.com/img/logo-psg.png" alt="" class="w-10 h-10 rounded-full mt-1 flex-shrink-0"/>
+            <div class="flex-1">
+              <div class="text-sm text-psg-gray">6 Mar 2026</div>
+              <h3 class="font-bold text-xl mt-1">PSG Kalah 1-3 dari Monaco: Luis Enrique Akui Tim Sangat Tidak Presisi</h3>
+              <p class="mt-2 text-psg-gray">Luis Enrique mengakui timnya gagal tampil sesuai standar...</p>
+              <a href="/berita/psg-kalah-monaco-luis-enrique-analisis" class="mt-4 inline-block text-psg-red font-medium hover:underline">Baca Selengkapnya →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="article-card border-b border-psg-border p-5">
+          <div class="flex gap-4">
+            <img src="https://beritapsg.com/img/logo-psg.png" alt="" class="w-10 h-10 rounded-full mt-1 flex-shrink-0"/>
+            <div class="flex-1">
+              <div class="text-sm text-psg-gray">6 Mar 2026</div>
+              <h3 class="font-bold text-xl mt-1">PSG Kalah 1-3 dari Monaco: Luis Enrique Akui Tim Sangat Tidak Presisi</h3>
+              <p class="mt-2 text-psg-gray">Luis Enrique mengakui timnya gagal tampil sesuai standar...</p>
+              <a href="/berita/psg-kalah-monaco-luis-enrique-analisis" class="mt-4 inline-block text-psg-red font-medium hover:underline">Baca Selengkapnya →</a>
+            </div>
+          </div>
+        </article>
+
+      </main>
+
+      <!-- Right Sidebar (sama) -->
+      <aside class="hidden xl:block w-80 flex-shrink-0 px-5 py-6 sticky top-14 h-[calc(100vh-3.5rem)] sidebar-scroll border-l border-psg-border">
+        <!-- isi sidebar kanan sama seperti sebelumnya -->
+        <div class="bg-gradient-to-b from-psg-card to-psg-bg/80 rounded-2xl p-6 mb-6 border border-psg-border/60 shadow-xl shadow-black/30">
+          <h2 class="text-xl font-bold text-psg-red mb-4 pb-2 border-b border-psg-red/40">Tentang Paris Saint-Germain</h2>
+          <div class="space-y-4 text-sm leading-relaxed text-psg-gray">
+            <p>Paris Saint-Germain (PSG) bermarkas di Parc des Princes dan menjadi salah satu klub paling dominan di Eropa.</p>
+            <p class="font-medium text-psg-text">Juara Liga Champions UEFA 2024–2025</p>
+            <p>Mengalahkan Inter Milan 5-0 di final – trofi pertama klub di kompetisi ini.</p>
+          </div>
+        </div>
+
+        <!-- Daftar Pelatih & Pemain PSG -->
+<div class="bg-psg-card/80 rounded-2xl p-4 border border-psg-border/50 shadow-lg hover:shadow-psg-red/10 transition-shadow duration-300">
+  <h3 class="font-bold text-lg mb-4 text-white">Update Pemain PSG</h3>
+  <ul class="divide-y divide-psg-border/30">
+    <li>
+      <a href="/pelatih/luis-enrique" class="player-item">
+        <img 
+          src="https://media.psg.fr/image/upload/c_fill,ar_3:2,w_641,g_auto/f_avif/q_75/v1/_A9_5811-2_p0cfpr?_a=BAVMn6B00" 
+          alt="Luis Enrique" 
+          class="player-img ring-2 ring-psg-red/40"
+        />
+        <span class="text-white font-medium">Luis Enrique</span>
+      </a>
+    </li>
+    <li>
+      <a href="/pemain/dembele" class="flex items-center gap-4 hover:bg-psg-red/10 rounded-lg p-2 transition">
+        <img 
+          src="https://cdn-media.theathletic.com/cdn-cgi/image/width=770%2cquality=70%2cformat=auto/https://cdn-media.theathletic.com/Ck58EinZPxJR_rZnGcIW7udSh_1440x960.jpg" 
+          alt="Ousmane Dembélé" 
+          class="player-img ring-2 ring-psg-red/40"
+        />
+        <span class="text-white font-medium">Ousmane Dembélé</span>
+      </a>
+    </li>
+    <li>
+      <a href="/pemain/doue" class="flex items-center gap-4 hover:bg-psg-red/10 rounded-lg p-2 transition">
+        <img 
+          src="https://statik.tempo.co/data/2025/06/01/id_1402558/1402558_720.jpg" 
+          alt="Désiré Doué" 
+          class="player-img ring-2 ring-psg-red/40"
+        />
+        <span class="text-white font-medium">Désiré Doué</span>
+      </a>
+    </li>
+    <li>
+      <a href="/pemain/achraf-hakimi" class="flex items-center gap-4 hover:bg-psg-red/10 rounded-lg p-2 transition">
+        <img 
+          src="https://media.psg.fr/image/upload/c_fill,ar_3:2,w_1081,g_auto/f_avif/q_75/v1/27_gqhk4p?_a=BAVMn6B00" 
+          alt="Ousmane Dembélé" 
+          class="player-img ring-2 ring-psg-red/40"
+        />
+        <span class="text-white font-medium">Achraf Hakimi</span>
+      </a>
+    </li>
+    <li>
+      <a href="/pemain/zaire-emery" class="flex items-center gap-4 hover:bg-psg-red/10 rounded-lg p-2 transition">
+        <img 
+          src="https://media.psg.fr/image/upload/c_fill,ar_1:1,w_641,g_auto/f_avif/q_75/v1/PSG__r02yyh?_a=BAVMn6B00" 
+          alt="Zaire Emery" 
+          class="player-img ring-2 ring-psg-red/40"
+        />
+        <span class="text-white font-medium">Zaire Emery</span>
+      </a>
+    </li>
+  </ul>
+</div>
+      
+      </aside>
+
+    </div>
+
+    <!-- Footer Biasa (statis di bawah konten, desain lebih baik) -->
+    <!-- ================== FOOTER 3 KOLOM ================== -->
+    <footer class="footer mt-auto mb-8 md:mb-0">
+      <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+          <!-- Kolom 1 -->
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-bold text-psg-text mb-5">Berita PSG</h3>
+            <p class="text-psg-gray leading-relaxed mb-6">
+              Portal berita independen khusus Paris Saint-Germain.<br>
+              Update harian: berita terkini, jadwal, skor, transfer, dan analisis mendalam untuk penggemar di Indonesia.
+            </p>
+            <p class="text-sm text-psg-gray/80">
+              © 2026 Berita PSG. Semua hak cipta dilindungi.
+            </p>
+          </div>
+
+          <!-- Kolom 2 -->
+          <div class="text-center md:text-left">
+            <h4 class="text-lg font-semibold text-psg-text mb-5">Tautan Penting</h4>
+            <ul class="space-y-4 text-psg-gray leading-relaxed">
+              <li><a href="/tentang-kami" class="footer-link">Tentang Kami</a></li>
+              <li><a href="/pedoman-media" class="footer-link">Pedoman Media Siber</a></li>
+              <li><a href="/kebijakan-privasi" class="footer-link">Kebijakan Privasi</a></li>
+              <li><a href="/kontak" class="footer-link">Hubungi Kami</a></li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3 -->
+          <div class="text-center md:text-left">
+            <h4 class="text-lg font-semibold text-psg-text mb-5">Ikuti Kami</h4>
+            <p class="text-psg-gray leading-relaxed mb-6">
+              Dapatkan update langsung di media sosial kami.
+            </p>
+            <div class="flex justify-center md:justify-start gap-6">
+              <a href="#" class="text-psg-gray social-icon">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C2.44 20.88 4.99 22 7.7 22c9.3 0 14.38-7.72 14.38-14.41 0-.22 0-.44-.01-.66A10.3 10.3 0 0022.46 6z"/></svg>
+              </a>
+              <a href="#" class="text-psg-gray social-icon">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+              </a>
+              <a href="#" class="text-psg-gray social-icon">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.25-.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+
+  <!-- Bottom Nav Mobile (tetap fixed) -->
+  <nav class="mobile-nav fixed bottom-0 left-0 right-0 z-50 md:hidden">
+    <div class="flex justify-around items-center h-14 text-psg-gray">
+      <a href="/" class="flex flex-col items-center p-2 hover:text-psg-red">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-home"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+        <span class="text-xs mt-1">Beranda</span>
+      </a>
+      <a href="/jadwal" class="flex flex-col items-center p-2 hover:text-psg-red">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-clock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10.5 21h-4.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3" /><path d="M16 3v4" /><path d="M8 3v4" /><path d="M4 11h10" /><path d="M14 18a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M18 16.5v1.5l.5 .5" /></svg>
+        <span class="text-xs mt-1">Jadwal</span>
+      </a>
+      <a href="/berita" class="flex flex-col items-center p-2 hover:text-psg-red">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-news"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" /><path d="M8 8l4 0" /><path d="M8 12l4 0" /><path d="M8 16l4 0" /></svg>
+        <span class="text-xs mt-1">Berita</span>
+      </a>
+    </div>
+  </nav>
+
+</body>
+</html>
