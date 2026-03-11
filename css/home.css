@@ -1,278 +1,910 @@
-/* =====================
-GLOBAL
-===================== */
+:root {
+    /* Background: Biru sangat gelap (Hampir Hitam) */
+    --x-bg: #03080f;
 
-body{
-font-family:'Inter',system-ui,-apple-system,sans-serif;
+    /* Teks Utama: Putih bersih agar kontras tinggi */
+    --x-text: #ffffff;
+
+    /* Teks Dim: Abu-abu kebiruan yang lebih redup */
+    --x-dim: #5c6d85;
+
+    /* Border: Biru gelap yang sangat tipis dan subtle */
+    --x-border: #112236;
+
+    /* Warna Aksen: Merah PSG yang lebih dalam (tidak terlalu menyala) */
+    --x-blue: #b01c13;
+
+    /* Widget: Navy gelap agar menyatu dengan background */
+    --x-widget: #08121e;
+
+    /* Tambahan: Warna Hover (Biru Gelap) */
+    --psg-hover: rgba(0, 65, 112, 0.2);
+}
+
+.psg-body {
+    background-color: var(--x-bg);
+    color: var(--x-text);
+    margin: 0;
+}
+
+/* --- HEADER --- */
+.header-main {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--x-border);
+}
+
+.header-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.brand-name {
+    font-weight: 900;
+    /* Paling tebal */
+    font-size: 1.5rem;
+    /* Sedikit diperbesar */
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+
+    /* --- TEKNIK GRADASI TEKS --- */
+    background: linear-gradient(120deg, #da291c 30%, #ffffff 70%);
+
+    /* Membuat background hanya muncul di dalam bentuk teks */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Membuat warna teks asli menjadi transparan agar gradasi terlihat */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    /* Opsional: Tambahkan sedikit drop shadow lembut agar teks tetap terbaca tajam di background gelap */
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* --- GRID --- */
+.layout-main {
+    padding-top: 3.5rem;
+}
+
+.container-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+    .container-grid {
+        grid-template-columns: 275px 1fr 350px;
+        gap: 0;
+    }
 }
 
 
-/* =====================
-POST CONTENT
-===================== */
+/*--EXCERPT--*/
 
-.post-content{
-line-height:1.7;
-font-size:16px;
-margin-bottom:70px;
+.text-excerpt {
+    margin-bottom: 1rem;
 }
 
-.post-content p{
-margin-bottom:16px;
+/* --- SIDEBAR LEFT (REDIESIGN) --- */
+.sidebar-left {
+    border-right: 1px solid var(--x-border);
+    padding: 1rem;
+    height: 100vh;
+    position: sticky;
+    top: 3.5rem;
+    display: none;
 }
 
-.post-content h2{
-font-size:22px;
-margin-top:30px;
-margin-bottom:10px;
-font-weight:700;
+@media (min-width: 1024px) {
+    .sidebar-left {
+        display: block;
+    }
 }
 
-.post-content h3{
-font-size:18px;
-margin-top:24px;
-margin-bottom:8px;
-font-weight:600;
+.side-link {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.85rem 1.5rem;
+    font-size: 1.35rem;
+    /* Ukuran menu diperbesar */
+    font-weight: 500;
+    border-radius: 999px;
+    transition: 0.2s;
+    margin-bottom: 0.5rem;
+    /* Jarak antar menu lebih lebar */
+    color: var(--x-text);
+    text-decoration: none;
 }
 
-.post-content ul{
-padding-left:22px;
-margin-bottom:16px;
+.side-link:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.post-content ol{
-padding-left:22px;
-margin-bottom:16px;
+.btn-primary-x {
+    background: var(--x-blue);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    color: white;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
 }
 
-.post-content li{
-margin-bottom:6px;
+/* --- FEED (POSTINGAN) --- */
+.feed-content {
+    border-right: 1px solid var(--x-border);
 }
 
-
-/* =====================
-FEATURED IMAGE 4:3
-===================== */
-
-.featured-img{
-aspect-ratio:4/3;
-width:100%;
-object-fit:cover;
+.card-headline {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem 1.5rem 1.25rem;
+    /* Menambah padding bawah agar tombol tidak nempel garis */
+    border-bottom: 1px solid var(--x-border);
+    transition: 0.2s;
 }
 
-
-/* =====================
-RELATED ARTICLE
-===================== */
-
-.related-card{
-display:block;
-background:#0a1f38;
-border:1px solid #1a3a5a;
-border-radius:14px;
-overflow:hidden;
-transition:all .25s ease;
+.card-headline:hover {
+    background: rgba(255, 255, 255, 0.02);
 }
 
-.related-card:hover{
-transform:translateY(-4px);
-background:#102a4a;
+.post-author-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
-.related-img{
-aspect-ratio:4/3;
-width:100%;
-object-fit:cover;
+.post-content-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.read-more{
-display:inline-block;
-margin-top:10px;
-font-size:14px;
-color:#DA291C;
-font-weight:600;
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
-.read-more:hover{
-text-decoration:underline;
+.post-author-name {
+    font-weight: 700;
 }
 
-
-/* =====================
-SCROLLBAR
-===================== */
-
-::-webkit-scrollbar{
-width:8px;
+.post-date,
+.post-divider {
+    color: var(--x-dim);
+    font-size: 0.9rem;
 }
 
-::-webkit-scrollbar-track{
-background:#001122;
+/* Styling untuk Link Judul */
+.text-headline-link {
+    text-decoration: none;
+    /* Hilangkan garis bawah standar */
+    display: inline-block;
 }
 
-::-webkit-scrollbar-thumb{
-background:#1a3a5a;
-border-radius:20px;
+.text-headline {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    color: var(--x-text);
+    transition: color 0.2s;
 }
 
-::-webkit-scrollbar-thumb:hover{
-background:#274b73;
+/* Efek Hover ala X: Judul berubah jadi Biru atau sedikit lebih terang */
+.text-headline-link:hover .text-headline {
+    color: var(--x-blue);
+    text-decoration: underline;
+    /* Opsional: beri garis bawah saat hover */
 }
 
-/* HEADER LOGO HOVER */
-.header-logo img{
-transition:all .5s;
+/* Pastikan card-headline tetap punya padding bawah yang manis walau tanpa tombol */
+.card-headline {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem 1.25rem 1.25rem;
+    /* Padding bawah seimbang */
+    border-bottom: 1px solid var(--x-border);
+    cursor: pointer;
+    /* Memberi kesan seluruh kartu bisa berinteraksi */
 }
 
-.header-logo:hover img{
-transform:scale(1.1);
+.img-headline {
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid var(--x-border);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-/* NAV LINK UNDERLINE */
-.nav-link{
-position:relative;
+/* --- BUTTON READ MORE (FIXED POSITION) --- */
+.post-actions {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    /* Tambahan jarak internal agar tidak menempel bawah */
 }
 
-.nav-link span{
-position:absolute;
-bottom:-4px;
-left:0;
-width:0;
-height:2px;
-background:var(--psg-red);
-transition:all .3s;
+.btn-read-more {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--x-border);
+    color: var(--x-blue);
+
+    /* Menaikkan padding agar tombol lebih besar mengikuti ukuran font */
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 999px;
+    font-weight: 700;
+
+    /* Ukuran font diperbesar menjadi 1.1rem agar lebih terlihat */
+    font-size: 1.1rem;
+
+    text-decoration: none;
+    width: fit-content;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
-.nav-link:hover span{
-width:100%;
+.btn-read-more:hover {
+    background: rgba(29, 155, 240, 0.1);
+    border-color: var(--x-blue);
+    /* Sedikit efek scale saat hover agar lebih interaktif */
+    transform: translateY(-1px);
 }
 
-/* MOBILE MENU BUTTON */
-.mobile-menu-btn{
-transition:all .3s;
+.btn-read-more:hover {
+    background: rgba(29, 155, 240, 0.1);
+    border-color: var(--x-blue);
 }
 
-.mobile-menu-btn:hover{
-background:rgba(218,41,28,0.15);
+/* --- SIDEBAR RIGHT --- */
+.sidebar-right {
+    padding: 1rem 2rem;
+    display: none;
 }
 
-/* MOBILE MENU */
-
-#mobile-menu{
-transition:transform .5s ease;
+@media (min-width: 1024px) {
+    .sidebar-right {
+        display: block;
+    }
 }
 
-#mobile-menu.translate-x-0{
-transform:translateX(0);
+/* --- WIDGET PEMAIN GAYA BERITA --- */
+.card-widget {
+    background: var(--x-widget);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 1px solid var(--x-border);
+    /* Garis halus di pinggir widget */
 }
 
-#mobile-menu:not(.translate-x-0){
-transform:translateX(100%);
+.widget-title {
+    padding: 1.25rem 1rem 0.75rem 1rem;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    /* Gaya tabloid olahraga */
+    letter-spacing: 0.5px;
+    color: var(--x-text);
 }
 
-/* SIDEBAR SCROLL */
-
-.sidebar-scroll{
-overflow-y:auto;
+.player-row-link {
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid rgba(47, 51, 54, 0.5);
+    /* Garis pemisah antar pemain */
 }
 
-.sidebar-scroll::-webkit-scrollbar{
-width:6px;
+.player-row-link:last-of-type {
+    border-bottom: none;
 }
 
-.sidebar-scroll::-webkit-scrollbar-thumb{
-background:rgba(122,141,176,.4);
-border-radius:10px;
+.player-item-news {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    transition: background 0.3s ease;
 }
 
-/* ARTICLE CARD */
-
-.article-card{
-transition:background .3s;
+.player-item-news:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 
-.article-card:hover{
-background:rgba(10,31,56,.6);
+.player-info-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-/* PLAYER LIST */
-
-.player-item{
-display:flex;
-align-items:center;
-gap:16px;
-padding:8px;
-border-radius:10px;
-transition:.25s;
+.avatar-wrapper {
+    position: relative;
+    padding: 2px;
+    background: linear-gradient(45deg, var(--x-blue), transparent);
+    /* Ring halus estetik */
+    border-radius: 50%;
 }
 
-.player-item:hover{
-background:rgba(218,41,28,.1);
+.player-avatar-news {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid var(--x-widget);
+    /* Gap antara foto dan ring */
 }
 
-/* PLAYER IMAGE */
-
-.player-img{
-width:48px;
-height:48px;
-border-radius:50%;
-object-fit:cover;
+.player-name-news {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--x-text);
 }
 
-/* FOOTER */
-
-.footer{
-background:rgba(10,31,56,.9);
-border-top:1px solid var(--border);
+.player-position {
+    font-size: 0.8rem;
+    color: var(--x-dim);
+    text-transform: uppercase;
 }
 
-.footer-link{
-transition:.25s;
+.show-more-news {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    color: var(--x-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: rgba(29, 155, 240, 0.03);
+    transition: 0.2s;
 }
 
-.footer-link:hover{
-color:#da291c;
-text-decoration:underline;
+.show-more-news:hover {
+    background: rgba(29, 155, 240, 0.08);
+    text-decoration: underline;
 }
 
-/* SOCIAL ICON */
-
-.social-icon{
-transition:.3s;
+.text-dim {
+    color: var(--x-dim);
 }
 
-.social-icon:hover{
-color:#da291c;
-transform:scale(1.25);
+.footer-sidebar {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--x-dim);
 }
 
-/* MOBILE BOTTOM NAV */
-
-.mobile-nav{
-background:#0a1f38;
-border-top:1px solid var(--border);
+/* --- DROPDOWN BAHASA RAPI --- */
+.lang-selector {
+    position: relative;
 }
 
-.mobile-nav a{
-display:flex;
-flex-direction:column;
-align-items:center;
-padding:8px;
-transition:.25s;
+.btn-lang-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--x-border);
+    color: var(--x-text);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.mobile-nav a:hover{
-color:#da291c;
+.btn-lang-dropdown:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--x-blue);
 }
 
-.mobile-nav-link{
-display:flex;
-flex-direction:column;
-align-items:center;
-padding:8px;
-transition:.25s;
+.flag-icon {
+    width: 18px;
+    height: 12px;
+    object-fit: cover;
+    border-radius: 2px;
 }
 
-.mobile-nav-link:hover{
-color:#da291c;
+/* Menu Melayang */
+.dropdown-menu-psg {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    width: 160px;
+    background: rgba(8, 18, 30, 0.95);
+    /* var(--x-widget) dengan transparansi */
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--x-border);
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    color: var(--x-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.dropdown-item:hover {
+    background: rgba(218, 41, 28, 0.1);
+    /* Hover Merah PSG Tipis */
+    color: var(--x-blue);
+}
+
+.active-lang {
+    background: rgba(255, 255, 255, 0.05);
+    font-weight: 700;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: var(--x-border);
+    margin: 0.4rem 0;
+}
+
+/* Animasi Rotasi Panah */
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* --- WIDGET BERITA SIDEBAR --- */
+.news-sidebar-item {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--x-border);
+    transition: background 0.3s ease;
+}
+
+.news-sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.news-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.news-sidebar-category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--x-blue);
+    /* Merah PSG sebagai penanda kategori */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.news-sidebar-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--x-text);
+    margin: 0;
+}
+
+.news-sidebar-time {
+    font-size: 0.8rem;
+    color: var(--x-dim);
+    margin-top: 0.2rem;
+}
+
+/* Utilitas Jarak */
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.border-none {
+    border-bottom: none !important;
+}
+
+/* --- MOBILE BOTTOM NAV --- */
+.mobile-nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    background: rgba(8, 18, 30, 0.9);
+    /* var(--x-widget) transparan */
+    backdrop-filter: blur(15px);
+    border-top: 1px solid var(--x-border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Sembunyikan di Desktop */
+@media (min-width: 1024px) {
+    .mobile-nav-bottom {
+        display: none;
+    }
+}
+
+.nav-item-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--x-dim);
+    gap: 0.25rem;
+    transition: 0.2s;
+    flex: 1;
+}
+
+.nav-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.nav-item-mobile span {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+/* State Aktif (Merah PSG) */
+.nav-item-mobile.active {
+    color: var(--x-blue);
+    /* Merah PSG */
+}
+
+/* Berikan padding bawah pada body agar konten tidak tertutup footer di mobile */
+@media (max-width: 1023px) {
+    .psg-body {
+        padding-bottom: 4.5rem;
+    }
+}
+
+/* --- HAMBURGER & DRAWER --- */
+.btn-hamburger {
+    background: transparent;
+    border: none;
+    color: var(--x-text);
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Sembunyikan elemen tertentu berdasarkan layar */
+@media (min-width: 1024px) {
+    .lg\:hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .hidden {
+        display: none;
+    }
+}
+
+/* Style Link di dalam Mobile Menu */
+.mobile-nav-link {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--x-text);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: 0.2s;
+}
+
+.mobile-nav-link:hover {
+    color: var(--x-blue);
+    /* Merah PSG */
+}
+
+/* Lang Item Mobile */
+.lang-item-mobile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    color: var(--x-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    border: 1px solid transparent;
+}
+
+.lang-item-mobile.active {
+    border-color: var(--x-blue);
+    background: rgba(176, 28, 19, 0.05);
+}
+
+/* Mencegah scroll saat menu buka */
+[x-cloak] {
+    display: none !important;
+}
+
+/* --- SIDEBAR MOBILE STYLING --- */
+
+.mobile-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.85rem 0.5rem;
+    color: var(--x-text);
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    transition: 0.2s ease;
+    border-radius: 12px;
+}
+
+.mobile-nav-item:active,
+.mobile-nav-item:hover {
+    background: rgba(218, 41, 28, 0.1);
+    /* Merah PSG transparan */
+    color: var(--x-blue);
+}
+
+/* Box Ikon */
+.icon-box {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    color: var(--x-dim);
+    transition: 0.2s;
+}
+
+/* Styling Menu dengan Ikon */
+.mobile-nav-link-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--x-text);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.mobile-nav-link-icon:hover {
+    color: var(--x-blue);
+}
+
+.nav-svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--x-dim); /* Warna ikon default */
+}
+
+.mobile-nav-link-icon:hover .nav-svg {
+    color: var(--x-blue);
+}
+
+/* Styling Ganti Bahasa (List Bulat) */
+.lang-item-mobile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    color: var(--x-text);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.lang-item-mobile.active {
+    border-color: var(--x-blue);
+    background: rgba(176, 28, 19, 0.08);
+}
+
+.lang-flag-round {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%; /* Membuat bendera bulat sempurna */
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Footer Utama (Modern Media Style) --- */
+.article-footer-main {
+    margin-top: 80px;
+    padding: 60px 24px 30px; /* Jarak atas lebih lega untuk kesan premium */
+    border-top: 1px solid var(--psg-border);
+    /* Gradient halus untuk kedalaman visual */
+    background: linear-gradient(to bottom, transparent, rgba(0, 34, 68, 0.15));
+}
+
+/* Layout Grid */
+.footer-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Kolom Branding */
+.footer-logo-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.footer-logo-img { 
+    height: 48px; 
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.footer-brand-text {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--psg-text);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.footer-tagline {
+    color: var(--psg-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 320px; /* Agar teks tidak terlalu melar ke kanan */
+    margin-bottom: 24px;
+}
+
+/* Judul Kolom (Menu) */
+.footer-title {
+    color: var(--psg-text);
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    position: relative;
+}
+
+/* Link List */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-list li { 
+    margin-bottom: 14px; 
+}
+
+.footer-links-list a {
+    color: var(--psg-gray);
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-links-list a:hover {
+    color: var(--psg-red);
+    transform: translateX(6px); /* Efek geser yang halus */
+}
+
+/* Sosial Media */
+.footer-social-icons {
+    display: flex;
+    gap: 18px;
+}
+
+.s-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--psg-gray);
+    transition: all 0.3s ease;
+}
+
+.s-icon:hover { 
+    color: #ffffff; /* Putih lebih menonjol untuk ikon */
+    transform: translateY(-3px); 
+}
+
+/* Baris Bawah (Copyright & Legal) */
+.footer-bottom-bar {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(26, 58, 90, 0.5); /* Border lebih tipis/halus */
+    text-align: center;
+}
+
+.footer-bottom-bar p {
+    font-size: 12px;
+    color: var(--psg-gray);
+    letter-spacing: 0.3px;
+    opacity: 0.8;
+}
+
+/* --- Responsive Optimization --- */
+@media (max-width: 900px) {
+    .footer-content-grid {
+        grid-template-columns: 1.5fr 1fr; /* Grid lebih rapat di tablet */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-content-grid {
+        grid-template-columns: 1fr; /* Tumpuk satu kolom di mobile */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-logo-box { justify-content: center; }
+    .footer-tagline { margin: 0 auto 24px; }
+    .footer-social-icons { justify-content: center; }
+    
+    .footer-links-list a:hover { 
+        transform: translateY(-2px); /* Di mobile, geser ke atas lebih baik daripada ke kanan */
+    }
+}
+
+/* --- Footer Perbaikan (Updated Colors) --- */
+.article-footer-main {
+    background: var(--x-bg);
+    border-top: 1px solid var(--x-border);
+}
+
+.footer-brand-text, .footer-title {
+    color: var(--x-text);
+}
+
+.footer-tagline, .footer-links-list a {
+    color: var(--x-dim);
+}
+
+.footer-links-list a:hover {
+    color: var(--x-blue);
 }

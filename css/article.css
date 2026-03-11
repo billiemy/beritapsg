@@ -1,237 +1,365 @@
-/* PAGE */
 
-.article-page{
-  flex:1;
-  min-height:100vh;
-  background:#001122;
-  border-left:1px solid #1a3a5a;
-  border-right:1px solid #1a3a5a;
+
+
+/* Container Utama */
+.page-article {
+  background-color: transparent;
+  border-right: 1px solid var(--psg-border);
+  padding: 20px;
 }
 
-/* ARTICLE WRAPPER */
-
-.article{
-  max-width:760px;
-  margin:auto;
-  padding:40px 24px;
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 13px;
+  margin-bottom: 25px;
+  color: var(--psg-gray);
 }
 
-/* BREADCRUMB */
-
-.breadcrumb{
-  font-size:14px;
-  color:#7a8db0;
-  margin-bottom:15px;
+.breadcrumb a {
+  color: var(--psg-red);
+  text-decoration: none;
 }
 
-.breadcrumb a{
-  text-decoration:none;
-  color:#7a8db0;
+.breadcrumb .sep {
+  margin: 0 8px;
 }
 
-.breadcrumb a:hover{
-  color:#e0f0ff;
-}
-
-/* TITLE */
-
-.article h1{
-  font-size:32px;
-  font-weight:700;
-  margin-bottom:20px;
-  line-height:1.3;
-  color:#e0f0ff;
-}
-
-/* META */
-
-.meta{
-  display:flex;
-  gap:10px;
-  font-size:14px;
-  margin-bottom:25px;
-  color:#7a8db0;
-}
-
-.meta .category{
-  color:#e0f0ff;
-  font-weight:600;
-}
-
-/* FEATURED IMAGE */
-
-.featured-image{
- width: 100%;
-    height: auto;   /* pastikan proporsional */
-    border-radius: 5px;
-    margin-bottom: 25px;
-    max-width: 760px;
-}
-
-/* ARTICLE CONTENT */
-
-.article-content{
-  font-size:18px;
-  line-height:1.8;
-  color:#e0f0ff;
-}
-
-.article-content p{
-  margin-bottom:20px;
-}
-
-.article-content h2{
-  font-size:26px;
-  font-weight:700;
-  margin:30px 0 10px;
-  color:#e0f0ff;
-}
-
-/* BACA JUGA */
-
-.read-more{
-  border:1px solid #1a3a5a;
-  background:#0a1f38;
-  padding:18px;
-  border-radius:12px;
-  margin:30px 0;
-}
-
-.read-more p{
-  color:#DA291C;
-  font-weight:600;
-  font-size:18px;
-  margin:0 0 8px 0;
-}
-
-.read-more a{
-  display:block;
-  text-decoration:none;
-  color:#e0f0ff;
-  font-weight:500;
-}
-
-.read-more a:hover{
-  color:#DA291C;
-}
-
-/* FAQ */
-
-.faq{
-  max-width:760px;
-  margin:auto;
-  padding:40px 24px;
-  border-top:1px solid #1a3a5a;
-}
-
-.faq h2{
-  font-size:26px;
+/* Artikel Headline */
+.article-title {
+  font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom:20px;
-  color:#e0f0ff;
+  line-height: 1.15;
+  color: var(--psg-text);
+  margin-bottom: 15px;
 }
 
-.faq details{
-  background:#0a1f38;
-  padding:18px;
-  border-radius:12px;
-  margin-bottom:12px;
-  border:1px solid #1a3a5a;
+.article-meta {
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: var(--psg-gray);
 }
 
-.faq summary{
-  cursor:pointer;
-  font-weight:600;
-  font-size:16px;
-  color:#e0f0ff;
+.author-name {
+  color: var(--psg-red);
+  font-weight: 600;
+}
+.post-date {
+  margin-top: 0.5rem;
 }
 
-.faq details p{
-  margin-top:10px;
-  color:#7a8db0;
-  line-height:1.6;
+/* Foto Rasio 4:3 */
+.featured-media {
+  margin: 0 0 30px 0;
 }
 
-/* RELATED ARTICLE */
-
-/* related.css */
-
-.related-section {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem; /* lebih longgar */
-    border-top: 1px solid #1a3a5a; /* border-psg-border */
+.image-wrapper-43 {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--psg-border);
 }
 
-.related-section h2 {
-    font-size: 1.75rem; /* text-2xl lebih besar */
-    font-weight: 700; /* font-bold */
-    margin-bottom: 2rem; /* mb-6 lebih longgar */
-    color: #ffffff;
+.image-wrapper-43 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.related-articles {
+figcaption {
+  font-size: 14px;
+  color: var(--psg-gray);
+  margin-top: 10px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Isi Artikel */
+.article-body-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: var(--psg-text);
+}
+
+
+/* FAQ & Related */
+.article-faq {
+    margin-top: 40px;
+}
+
+.section-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    padding-top: 30px;
+    border-top: 1px solid var(--x-border);
+    color: var(--x-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Container FAQ Toggle */
+.faq-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* space-y-6 lebih longgar */
+    gap: 16px; /* Jarak antar kotak FAQ */
 }
 
-.related-article {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem; /* gap-4 agak lebih lega */
-    background-color: #0a1f38; /* bg-psg-card */
-    border-radius: 1rem; /* rounded-xl */
+.faq-item {
+    background: var(--x-widget);
+    border: 1px solid var(--x-border);
+    border-radius: 10px;
     overflow: hidden;
-    transition: background-color 0.3s ease;
-    padding: 1rem; /* p-3 */
+    transition: all 0.3s ease;
+}
+
+/* Styling Summary (Pertanyaan) */
+.faq-item summary {
+    padding: 16px 20px; /* Spasi dalam agar pertanyaan tidak sesak */
+    font-weight: 700;
+    color: var(--x-text);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s ease;
+}
+
+.faq-item summary:hover {
+    background: var(--psg-hover);
+}
+
+/* Icon Panah Toggle */
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--x-blue);
+    font-weight: 400;
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+/* Styling Content (Jawaban) */
+.faq-content {
+    padding: 0 20px 20px 20px; /* Spasi dalam saat terbuka */
+    color: var(--x-dim);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+
+/* --- Desktop (Default) --- */
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom di layar besar */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.related-item img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--x-border);
+    transition: opacity 0.3s ease;
+}
+
+.related-item h4 {
+    color: var(--x-text);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 1rem;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    .related-grid {
+        grid-template-columns: 1fr; /* Paksa menjadi 1 Kolom saja */
+        gap: 25px; /* Jarak antar artikel dibuat lebih lebar agar tidak rapat */
+    }
+
+    .related-item {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid var(--x-border); /* Tambahkan garis pemisah antar artikel di mobile */
+        padding-bottom: 15px;
+    }
+
+    .related-item:last-child {
+        border-bottom: none; 
+    }
+
+    .related-item h4 {
+        font-size: 16px; /
+    }
+}
+
+/* --- Kotak Baca Juga: The Modern Indicator --- */
+.read-also-card {
+    background: var(--x-widget);
+    border-left: 5px solid var(--x-blue);
+    padding: 20px 25px;
+    margin: 35px 0;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.read-also-card:hover {
+    background: rgba(176, 28, 19, 0.05); 
+}
+
+.read-also-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.read-also-header span {
+    color: var(--x-blue);
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Garis tipis dekoratif di samping teks "Baca Juga" */
+.read-also-header::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--x-border);
+}
+
+.read-also-body a {
+    color: var(--x-text);
+    font-size: 1.15rem;
+    font-weight: 700;
     text-decoration: none;
-}
-
-.related-article:hover {
-    background-color: rgba(10, 31, 56, 0.7); /* hover effect */
-}
-
-.article-image {
-    width: 100%;
-    aspect-ratio: 4 / 3; /* pastikan selalu 4:3 */
-    overflow: hidden;
-    border-radius: 0.5rem;
-    flex-shrink: 0;
-}
-
-.article-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* selalu memenuhi 4:3 */
+    line-height: 1.4;
     display: block;
 }
 
-.related-article-content {
-    padding: 0.25rem 0; /* beri ruang di dalam konten */
+.read-also-body a:hover {
+    color: var(--x-blue);
 }
 
-.related-article-content h3 {
-    font-weight: 700;
-    margin-bottom: 0.5rem; /* lebih longgar */
-    line-height: 1.5; /* jarak baris lebih lega */
-    color: #ffffff;
+.read-also-body p {
+    color: var(--x-dim) !important;
+    font-size: 0.9rem !important;
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
+    opacity: 0.8;
 }
 
-.related-article-content p {
-    font-size: 0.95rem; /* text-sm sedikit lebih besar */
-    color: #7a8db0; /* text-psg-gray */
-    line-height: 1.6; /* jarak antar baris lebih longgar */
-    margin: 0;
-}
-
-/* Responsive untuk desktop sm:flex-row */
-@media screen and (min-width: 640px) {
-    .related-article {
-        flex-direction: row;
-        gap: 1.5rem;
+/* Responsive */
+@media (max-width: 768px) {
+    .read-also-card {
+        padding: 15px 20px;
+        margin: 25px 0;
     }
-    .article-image {
-        width: 10rem; /* sm:w-40 */
+    .read-also-body a {
+        font-size: 1.05rem;
+    }
+}
+
+
+/* --- FAQ Toggle (Updated Colors) --- */
+.faq-item {
+    background: var(--x-widget);
+    border: 1px solid var(--x-border);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.faq-item summary {
+    padding: 12px 15px;
+    font-weight: 600;
+    color: var(--x-text);
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq-item summary::after {
+    color: var(--x-dim);
+}
+
+.faq-content {
+    padding: 0 15px 15px 15px;
+    color: var(--x-dim);
+    font-size: 0.95rem;
+    border-top: 1px solid var(--x-border);
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+
+/* --- FAQ Toggle (Accordion) --- */
+.faq-container { display: flex; flex-direction: column; gap: 10px; }
+.faq-item {
+    background: var(--psg-card);
+    border: 1px solid var(--psg-border);
+    border-radius: 8px;
+    padding: 5px;
+}
+.faq-item summary {
+    padding: 12px 15px;
+    font-weight: 600;
+    color: var(--psg-text);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-item summary::after {
+    content: '▼';
+    font-size: 10px;
+    transition: 0.3s;
+}
+.faq-item[open] summary::after { transform: rotate(180deg); }
+.faq-content {
+    padding: 0 15px 15px 15px;
+    color: var(--psg-gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    /* Perkecil judul utama artikel */
+    .article-title {
+        font-size: 28px !important; /* Paksa ke 30px sesuai permintaan */
+        line-height: 1.25;
+        margin-bottom: 15px;
+    }
+
+    /* Sinkronisasi dengan Artikel Terkait 1 Kolom */
+    .related-grid {
+        grid-template-columns: 1fr; 
+        gap: 25px;
+    }
+
+    .related-item {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid var(--x-border);
+        padding-bottom: 20px;
+    }
+
+    /* Penyesuaian Meta (Penulis & Tanggal) agar tidak terlalu renggang */
+    .article-meta {
+        font-size: 13px;
+        margin-bottom: 20px;
     }
 }
