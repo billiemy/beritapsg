@@ -2,41 +2,25 @@
 <html lang="id" class="dark">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Willian Pacho Puji Marquinhos, "Orang yang Luar Biasa" | Berita PSG</title>
-    <link rel="canonical" href="https://beritapsg/berita/pacho-puji-marquinhos">
+    <title>Willian Pacho Puji Setinggi Langit Kepemimpinan Marquinhos di PSG - Bola.com</title>
     <meta name="description"
-        content="Willian Pacho, bek PSG, memuji rekannya Marquinhos yang selalu membantunya memahami permainan dan beradaptasi dengan gaya Luis Enrique.">
-    <link rel="icon" href="/img/psg-news.png" type="image/png">
-    <!-- OPEN GRAPH (SOCIAL MEDIA SHARE) -->
-    <meta property="og:title" content='Willian Pacho Puji Marquinhos, "Orang yang Luar Biasa"'>
-    <meta property="og:description"
-        content="Willian Pacho, bek PSG, memuji rekannya Marquinhos yang selalu membantunya memahami permainan dan beradaptasi dengan gaya Luis Enrique.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://beritapsg/berita/pacho-puji-marquinhos">
-    <meta property="og:image" content="https://media.psg.fr/image/upload/c_fill,ar_3:2,w_1921,g_auto/f_avif/q_75/v1/22_RENNES_pacho_bzf2af?_a=BAVMn6B00">
-    <meta property="og:site_name" content="Berita PSG">
+        content="Bek PSG, Willian Pacho, ungkap peran krusial Marquinhos dalam proses adaptasinya. Pelajari bagaimana sang kapten membantunya memahami taktik Luis Enrique.">
+    <meta name="keywords"
+        content="Willian Pacho, Marquinhos, PSG, Paris Saint-Germain, Luis Enrique, Berita Bola, Liga Prancis, Bek PSG">
+    <link rel="canonical"
+        href="https://beritapsg.com/berita/pacho-puji-marquinhos">
+    <link rel="icon" type="image/png" href="/img/psg-news.png">
 
-    <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content='Willian Pacho Puji Marquinhos, "Orang yang Luar Biasa"'>
-    <meta name="twitter:description"
-        content="Willian Pacho, bek PSG, memuji rekannya Marquinhos yang selalu membantunya memahami permainan dan beradaptasi dengan gaya Luis Enrique.">
-    <meta name="twitter:image" content="https://media.psg.fr/image/upload/c_fill,ar_3:2,w_1921,g_auto/f_avif/q_75/v1/22_RENNES_pacho_bzf2af?_a=BAVMn6B00">
-    <meta name="twitter:site" content="@beritapsg">
-
-    <!-- PRECONNECT FONT GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- GOOGLE FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- TAILWIND CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -56,546 +40,497 @@
         }
     </script>
 
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="/css/news.css">
-    <link rel="stylesheet" href="/css/article.css">
-
-    <!-- ALPINE JS -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/article.css">
 
 
 </head>
 
-<body class="bg-psg-bg text-psg-text font-['Inter'] antialiased">
+<body class="psg-body">
 
-    <header
-        class="fixed top-0 left-0 right-0 z-50 bg-psg-darkblue/90 backdrop-blur-xl border-b border-psg-border/70 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <!-- Logo -->
-            <div class="flex items-center gap-4">
-                <div class="relative group">
-                    <img src="https://beritapsg.com/img/logo-psg.png" alt="PSG"
-                        class="w-11 h-11 rounded-full object-cover ring-2 ring-psg-red/40 group-hover:ring-psg-red/70 transition-all duration-500 transform group-hover:scale-110" />
-                    <div
-                        class="absolute -top-1 -right-1 w-4 h-4 bg-psg-red rounded-full border-2 border-psg-darkblue animate-ping opacity-70">
-                    </div>
-                </div>
-                <h1
-                    class="text-2xl md:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white to-psg-red bg-clip-text text-transparent">
-                    BERITA PSG
-                </h1>
+    <header class="header-main" x-data="{ mobileMenu: false }">
+        <div class="header-container">
+            <div class="header-brand">
+                <img src="/img/logo-psg.png" class="logo-img" alt="Logo">
+                <h1 class="brand-name">BERITA PSG</h1>
             </div>
 
-            <!-- Nav Desktop -->
-            <div class="hidden md:flex items-center gap-8 text-base font-medium">
-                <a href="/" class="relative text-psg-text hover:text-white transition-colors duration-300 group">
-                    Beranda
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-psg-red group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="/berita" class="relative text-psg-text hover:text-white transition-colors duration-300 group">
-                    Berita
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-psg-red group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="/jadwal" class="relative text-psg-text hover:text-white transition-colors duration-300 group">
-                    Jadwal
-                    <span
-                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-psg-red group-hover:w-full transition-all duration-300"></span>
-                </a>
-
-                <!-- Dropdown Bahasa (toggle klik) -->
-                <div class="relative" x-data="{ open: false }">
-                    <button @click="open = !open"
-                        class="flex items-center gap-2 px-4 py-2 rounded-full bg-psg-red/10 border border-psg-red/40 text-psg-red hover:bg-psg-red/20 hover:border-psg-red/60 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-psg-red/40"
-                        type="button">
-                        <span class="font-semibold">Bahasa</span>
-                        <svg class="w-5 h-5 transition-transform duration-300" :class="open ? 'rotate-180' : ''"
-                            fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-
-                    <div x-show="open" @click.outside="open = false"
-                        x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="opacity-0 scale-95 translate-y-2"
-                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                        x-transition:leave="transition ease-in duration-150"
-                        x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-                        x-transition:leave-end="opacity-0 scale-95 translate-y-2"
-                        class="absolute right-0 mt-3 w-44 bg-psg-card/95 backdrop-blur-lg border border-psg-border/70 rounded-xl shadow-2xl overflow-hidden z-50">
-                        <a href="/en" @click="open = false"
-                            class="block px-5 py-3.5 text-sm text-psg-text hover:bg-psg-red/15 hover:text-white transition flex items-center gap-3">
-                            <span class="text-lg">🇬🇧</span> English (EN)
-                        </a>
-                        <a href="/fr" @click="open = false"
-                            class="block px-5 py-3.5 text-sm text-psg-text hover:bg-psg-red/15 hover:text-white transition flex items-center gap-3">
-                            <span class="text-lg">🇫🇷</span> Français (FR)
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tombol Hamburger Mobile -->
-            <button
-                class="md:hidden relative p-3 rounded-full hover:bg-psg-red/15 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-psg-red/40"
-                onclick="toggleMobileMenu()">
-                <svg id="hamburger-icon" class="w-8 h-8 text-psg-text transition-all duration-500 ease-in-out"
-                    fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                    <path id="plus-line-1" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14"
-                        class="transition-all duration-500" />
-                    <path id="plus-line-2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"
-                        class="transition-all duration-500" />
+            <button @click="mobileMenu = true" class="btn-hamburger lg:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
                 </svg>
             </button>
+
+            <div class="hidden lg:block">
+            </div>
         </div>
+
+        <template x-teleport="body">
+            <div x-show="mobileMenu" class="fixed inset-0 z-[1000] lg:hidden" x-cloak>
+
+                <div @click="mobileMenu = false" x-show="mobileMenu"
+                    x-transition:enter="transition opacity-0 ease-out duration-300" x-transition:enter-end="opacity-100"
+                    class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+                <div x-show="mobileMenu" x-transition:enter="transition transform ease-out duration-300"
+                    x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+                    class="absolute right-0 top-0 h-full w-72 bg-[#08121e] border-l border-[#112236] p-6 shadow-2xl">
+
+                    <div class="flex justify-between items-center mb-8">
+                        <span class="font-bold text-lg">Menu</span>
+                        <button @click="mobileMenu = false" class="text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <template x-teleport="body">
+                        <div x-show="mobileMenu" class="fixed inset-0 z-[1000] lg:hidden" x-cloak>
+                            <div @click="mobileMenu = false" x-show="mobileMenu"
+                                x-transition:enter="transition opacity-0 ease-out duration-300"
+                                x-transition:enter-end="opacity-100"
+                                class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+                            <div x-show="mobileMenu" x-transition:enter="transition transform ease-out duration-300"
+                                x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+                                class="absolute right-0 top-0 h-full w-72 bg-[#03080f] border-l border-[#112236] p-6 shadow-2xl">
+
+                                <div class="flex justify-between items-center mb-8">
+                                    <span class="font-bold text-lg uppercase tracking-wider">Menu</span>
+                                    <button @click="mobileMenu = false" class="text-white">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <nav class="flex flex-col gap-2 mb-10">
+                                    <a href="/" class="mobile-nav-link-icon">
+                                        <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path
+                                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 12h8">
+                                            </path>
+                                        </svg>
+                                        <span>Berita</span>
+                                    </a>
+                                    <a href="/pemain/" class="mobile-nav-link-icon">
+                                        <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                                            <circle cx="9" cy="7" r="4"></circle>
+                                            <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
+                                        </svg>
+                                        <span>Pemain</span>
+                                    </a>
+                                    <a href="/jadwal" class="mobile-nav-link-icon">
+                                        <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                        <span>Jadwal</span>
+                                    </a>
+                                    <a href="/klasemen" class="mobile-nav-link-icon">
+                                        <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                                        </svg>
+                                        <span>Klasemen</span>
+                                    </a>
+
+                                    <a href="/transsfer" class="mobile-nav-link-icon">
+                                        <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"></path>
+                                        </svg>
+                                        <span>Transfer</span>
+                                    </a>
+                                </nav>
+
+                                <div class="h-px bg-[#112236] mb-8"></div>
+
+                                <div class="lang-options-mobile">
+                                    <span
+                                        class="text-xs font-bold text-[#5c6d85] uppercase mb-4 block tracking-widest">Pilih
+                                        Bahasa</span>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="#" class="lang-item-mobile active">
+                                            <img src="https://flagcdn.com/w40/id.png" class="lang-flag-round">
+                                            <span>Indonesia</span>
+                                        </a>
+                                        <a href="#" class="lang-item-mobile">
+                                            <img src="https://flagcdn.com/w40/fr.png" class="lang-flag-round">
+                                            <span>Français</span>
+                                        </a>
+                                        <a href="#" class="lang-item-mobile">
+                                            <img src="https://flagcdn.com/w40/gb.png" class="lang-flag-round">
+                                            <span>English</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
     </header>
 
-    <!-- ================== MOBILE MENU ================== -->
-    <div id="mobile-menu"
-        class="fixed inset-y-0 right-0 z-50 w-4/5 max-w-xs bg-gradient-to-br from-psg-darkblue via-psg-bg to-psg-darkblue/95 backdrop-blur-2xl border-l-2 border-psg-red/30 shadow-2xl transform translate-x-full transition-transform duration-500 ease-in-out">
-        <!-- Header Mobile Menu -->
-        <div class="flex items-center justify-between p-6 border-b border-psg-border/40">
-            <div class="flex items-center gap-3">
-                <img src="https://beritapsg.com/img/logo-psg.png" alt="PSG"
-                    class="w-10 h-10 rounded-full ring-2 ring-psg-red/40" />
-                <span class="text-xl font-bold text-white">Menu</span>
-            </div>
-            <button class="p-3 rounded-full hover:bg-psg-red/20 transition" onclick="toggleMobileMenu()">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2.5"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
+    <main class="layout-main">
+        <div class="container-grid">
 
-        <!-- Nav Items -->
-        <nav class="flex flex-col p-6 space-y-2">
-            <a href="/"
-                class="group flex items-center gap-4 py-4 px-5 rounded-2xl hover:bg-psg-red/10 hover:pl-8 transition-all duration-300 border-l-4 border-transparent hover:border-psg-red">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-home">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-                </svg>
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-                <span class="text-lg font-medium">Beranda</span>
-            </a>
-
-            <a href="/berita"
-                class="group flex items-center gap-4 py-4 px-5 rounded-2xl hover:bg-psg-red/10 hover:pl-8 transition-all duration-300 border-l-4 border-transparent hover:border-psg-red">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-news">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path
-                        d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" />
-                    <path d="M8 8l4 0" />
-                    <path d="M8 12l4 0" />
-                    <path d="M8 16l4 0" />
-                </svg>
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a.5.5 0 00-.5-.5H14a.5.5 0 00-.5.5V19a2 2 0 01-2 2h-3a2 2 0 01-2-2v-5.5a.5.5 0 00-.5-.5H5a.5.5 0 00-.5.5V19a2 2 0 002 2h3a2 2 0 002-2v-5.5a.5.5 0 01.5-.5h2a.5.5 0 01.5.5V19a2 2 0 002 2z" />
-                </svg>
-                <span class="text-lg font-medium">Berita</span>
-            </a>
-
-            <a href="/jadwal"
-                class="group flex items-center gap-4 py-4 px-5 rounded-2xl hover:bg-psg-red/10 hover:pl-8 transition-all duration-300 border-l-4 border-transparent hover:border-psg-red">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-news">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path
-                        d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" />
-                    <path d="M8 8l4 0" />
-                    <path d="M8 12l4 0" />
-                    <path d="M8 16l4 0" />
-                </svg>
-                <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <span class="text-lg font-medium">Jadwal</span>
-            </a>
-
-            <!-- Divider -->
-            <div class="h-px bg-gradient-to-r from-transparent via-psg-border/70 to-transparent my-4"></div>
-
-            <!-- Bahasa -->
-            <div class="px-5">
-                <p class="text-psg-gray text-sm font-medium mb-4">Pilih Bahasa</p>
-                <div class="space-y-3">
-                    <a href="/en" class="flex items-center gap-4 py-3.5 px-5 rounded-xl hover:bg-psg-red/10 transition">
-                        <span class="text-2xl">🇬🇧</span>
-                        <span class="text-lg">English (EN)</span>
+            <aside class="sidebar-left">
+                <nav class="flex flex-col gap-1">
+                    <a href="/" class="side-link side-link-active">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-6h-4v6H4a1 1 0 01-1-1V9.5z" />
+                        </svg>
+                        <span>Beranda</span>
                     </a>
-                    <a href="/fr" class="flex items-center gap-4 py-3.5 px-5 rounded-xl hover:bg-psg-red/10 transition">
-                        <span class="text-2xl">🇫🇷</span>
-                        <span class="text-lg">Français (FR)</span>
+                    <a href="/berita" class="side-link">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path
+                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2zM7 8h5m-5 4h10m-10 4h10" />
+                        </svg>
+                        <span>Berita</span>
                     </a>
-                </div>
-            </div>
-        </nav>
-    </div>
+                    <a href="/klasemen" class="side-link">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        <span>Klasemen</span>
+                    </a>
+                </nav>
+
+            </aside>
 
 
-    <div class="pt-16 flex max-w-7xl mx-auto">
 
-        <!-- SIDEBAR KIRI -->
-        <aside
-            class="hidden lg:block w-72 flex-shrink-0 px-4 py-6 sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto border-r border-psg-border">
-            <nav class="flex flex-col gap-2 text-xl">
-                <a href="/" class="flex items-center gap-5 p-4 rounded-3xl hover:bg-psg-red/10 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-home">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-                    </svg>
-                    <span>Beranda</span>
-                </a>
-                <a href="/berita" class="flex items-center gap-5 p-4 rounded-3xl hover:bg-psg-red/10 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-news">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" />
-                        <path d="M8 8l4 0" />
-                        <path d="M8 12l4 0" />
-                        <path d="M8 16l4 0" />
-                    </svg>
-                    <span>Berita</span>
-                </a>
-                <a href="/jadwal" class="flex items-center gap-5 p-4 rounded-3xl hover:bg-psg-red/10 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-clock">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M10.5 21h-4.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3" />
-                        <path d="M16 3v4" />
-                        <path d="M8 3v4" />
-                        <path d="M4 11h10" />
-                        <path d="M14 18a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-                        <path d="M18 16.5v1.5l.5 .5" />
-                    </svg>
-                    <span>Jadwal</span>
-                </a>
-                <a href="/klasemen" class="flex items-center gap-5 p-4 rounded-3xl hover:bg-psg-red/10 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-trending-up">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M3 17l6 -6l4 4l8 -8" />
-                        <path d="M14 7l7 0l0 7" />
-                    </svg>
-                    <span>Klasemen</span>
-                </a>
-            </nav>
-        </aside>
+            <!--Artikel-->
 
 
-        <main class="article-page">
 
-            <article class="article">
+            <section class="page-article">
+                <nav class="breadcrumb">
+                    <a href="/">Beranda</a> <span class="sep">/</span>
+                    <a href="/berita">Berita</a> <span class="sep">/</span>
+                    <span class="current">Pacho Puji Marquinhos</span>
+                </nav>
 
-                <!-- Breadcrumb -->
-                <div class="breadcrumb">
-                    <a href="/">Beranda</a>
-                    <span>›</span>
-                    <a href="/berita">Berita PSG</a>
-                    <span>›</span>
-                    <span>Willian Pacho Puji Marquinhos</span>
-                </div>
 
-                <!-- Judul -->
-                <h1>
-                    Willian Pacho Puji Marquinhos, "Orang yang Luar Biasa"
-                </h1>
+                <article class="news-reader-container">
+                    <h1 class="article-title">Puji Setinggi Langit, Willian Pacho Sebut Marquinhos Sosok Pemimpin dan
+                        Panutan Luar Biasa di PSG</h1>
 
-                <!-- Meta -->
-                <div class="meta">
-                    <span class="category">Berita PSG</span>
-                    <span>•</span>
-                    <time>11 Maret 2026</time>
-                </div>
-
-                <!-- Featured Image -->
-                <img src="https://media.psg.fr/image/upload/c_fill,ar_3:2,w_1921,g_auto/f_avif/q_75/v1/22_RENNES_pacho_bzf2af?_a=BAVMn6B00"
-                    alt="Willian Pacho Puji Marquinhos" class="featured-image" />
-
-                <!-- CONTENT -->
-                <div class="article-content">
-
-                    <p>Bek PSG, Willian Pacho, tak sungkan memuji rekannya, Marquinhos, yang disebutnya sangat membantu
-                        di lapangan maupun di kehidupan sehari-hari.</p>
-
-                    <p>"Marquinhos adalah orang yang luar biasa. Dia mendukung saya sejak hari pertama. Dia menjadi
-                        contoh dengan semangatnya yang selalu ingin menang," ujar Willian Pacho di situs resmi UEFA.</p>
-
-                    <div class="read-more">
-                        <p>Baca juga</p>
-                        <a href="https://beritapsg.com/berita/psg-monaco-analisis">
-                            PSG Kalah dari Monaco: Analisis Lengkap Luis Enrique
-                        </a>
+                    <div class="article-meta">
+                        <div class="author-info">Oleh <span class="author-name">Redaksi Berita PSG</span></div>
+                        <div class="post-date">Rabu, 11 Maret 2026 | 07:33 WIB</div>
                     </div>
 
-                    <p>Pacho menambahkan bahwa kemampuan Marquinhos berbahasa Spanyol sangat membantunya memahami
-                        permainan. "Dia membantu saya membaca permainan, mengantisipasi, dan menempatkan diri dengan
-                        tepat di lapangan," kata Pacho.</p>
-
-                    <p>Lebih lanjut, Pacho menjelaskan bahwa Marquinhos juga membantunya menyesuaikan diri dengan gaya
-                        permainan yang diinginkan pelatih Luis Enrique. "Di sini, tim selalu ingin mendominasi dan
-                        bermain positif, berbeda dari pengalaman saya sebelumnya. Dia membantu saya beradaptasi dan
-                        menempatkan tubuh dengan baik di lapangan," tutup Pacho.</p>
-
-                </div>
-
-            </article>
-
-            <section class="related-section">
-
-                <h2>Berita Lainnya</h2>
-
-                <div class="related-articles">
-
-                    <!-- ARTICLE 1 -->
-                    <a href="https://beritapsg.com/berita/adrien-rabiot-sebut-zlatan-ibrahimovic-sosok-inspiratif" class="related-article">
-                        <div class="article-image">
-                            <img src="https://media.gettyimages.com/id/533416430/photo/paris-france-zlatan-ibrahimovic-psg-in-action-during-the-final-french-cup-between-paris-saint.jpg?s=612x612&w=0&k=20&c=mCDSfffsMsDa7MuaSuSyG1p5PPfGyA6GudIH5pvfKWs="
-                                alt="Adrien Rabiot Sebut Zlatan Ibrahimovic Sosok Inspiratif">
+                    <figure class="featured-media">
+                        <div class="image-wrapper-43">
+                            <img src="https://media.psg.fr/image/upload/c_fill,ar_3:2,w_1921,g_auto/f_avif/q_75/v1/_M_28772_wpe3ux?_a=BAVMn6B00"
+                                alt="Willian Pacho dan Marquinhos di sesi latihan PSG">
                         </div>
-                        <div class="related-article-content">
-                            <h3>Adrien Rabiot Sebut Zlatan Ibrahimovic Sosok Inspiratif</h3>
-                            <p>Karakter kuat Ibrahimovic membuat banyak pemain muda PSG termotivasi untuk bekerja lebih
-                                keras.</p>
-                        </div>
-                    </a>
+                        <figcaption>Kebersamaan Willian Pacho dan Marquinhos menjadi kunci kokohnya lini belakang PSG
+                            musim ini. (Foto: Dok. PSG)
+                        </figcaption>
+                    </figure>
 
-                    <!-- ARTICLE 2 -->
-                    <a href="https://beritapsg.com/berita/psg-kalah-monaco-luis-enrique-analisis" class="related-article">
-                        <div class="article-image">
-                            <img src="https://www.lequipe.fr/_medias/img-photo-jpg/luis-enrique-ce-vendredi-lors-de-psg-monaco-1-3-b-papon-l-equipe/1500000002410803/0:0,2000:1333-1200-800-75/3a57d.jpg"
-                                alt="PSG Kalah dari Monaco">
-                        </div>
-                        <div class="related-article-content">
-                            <h3>PSG Kalah 1-3 dari Monaco: Luis Enrique Akui Tim Sangat Tidak Presisi</h3>
-                            <p>Luis Enrique mengakui timnya gagal tampil sesuai standar dan perlu menonton ulang
-                                pertandingan untuk
-                                evaluasi.</p>
-                        </div>
-                    </a>
+                    <div class="article-body-content">
+                        <p>Bek tangguh Paris Saint-Germain (PSG), Willian Pacho, tidak segan-segan melontarkan pujian
+                            kepada rekan duetnya di lini pertahanan, Marquinhos. Pemain asal Ekuador tersebut menilai
+                            sang kapten sebagai sosok yang sangat berpengaruh, tidak hanya di atas lapangan tetapi juga
+                            dalam kehidupan sehari-harinya di Paris.</p>
 
-                    <!-- ARTICLE 3 -->
-                    <a href="https://beritapsg.com/berita/psg-vs-chelsea-luis-enrique-fokus" class="related-article">
-                        <div class="article-image">
-                            <img src="https://www.barrons.com/asset/external-media/afp/AFP2356782962114478226139345903365321909514---1.jpg"
-                                alt="Luis Enrique Fokus ke Liga Champions">
+                        <div class="read-also-card">
+                            <div class="read-also-header">BACA JUGA</div>
+                            <div class="read-also-body">
+                                <a
+                                    href="[https://beritapsg.com/berita/psg-monaco-analisis](https://beritapsg.com/berita/psg-monaco-analisis)">Analisis
+                                    Kekalahan PSG: Luis Enrique Soroti Efektivitas Tim</a>
+                                <p>Simak evaluasi mendalam sang pelatih pasca hasil minor kontra AS Monaco.</p>
+                            </div>
                         </div>
-                        <div class="related-article-content">
-                            <h3>Luis Enrique Alihkan Fokus ke Liga Champions Usai Kekalahan dari Monaco</h3>
-                            <p>Menurutnya PSG sudah sering berada di situasi sulit dan memiliki mentalitas untuk
-                                bangkit.</p>
+
+                        <p>"Marquinhos adalah pribadi yang luar biasa. Dia merangkul dan mendukung saya sejak hari
+                            pertama saya menginjakkan kaki di sini. Dia adalah contoh nyata dari seorang profesional
+                            dengan semangat juang yang selalu ingin menang," ujar Pacho seperti dilansir dari laman
+                            resmi <em>UEFA</em>.</p>
+
+                        <p>Adaptasi Pacho di Parc des Princes terbilang cukup mulus berkat bantuan sang kapten.
+                            Menariknya, kemampuan Marquinhos dalam berbahasa Spanyol menjadi jembatan komunikasi yang
+                            sangat krusial bagi Pacho untuk memahami instruksi taktis dengan cepat.</p>
+
+                        <p>"Berkat dia, saya bisa membaca permainan dengan lebih baik. Dia membantu saya dalam hal
+                            antisipasi dan memastikan posisi saya selalu tepat saat bertanding," tambah bek berusia 24
+                            tahun tersebut.</p>
+
+                        <p>Lebih lanjut, Pacho mengungkapkan bahwa Marquinhos memegang peran penting dalam membantunya
+                            memahami filosofi permainan yang diinginkan pelatih Luis Enrique. Gaya main PSG yang dominan
+                            menuntut kesigapan fisik dan mental yang berbeda dari pengalaman Pacho sebelumnya.</p>
+
+                        <p>"Filosofi di sini adalah tentang dominasi dan permainan positif. Marquinhos membimbing saya
+                            untuk menempatkan posisi tubuh dengan benar agar sesuai dengan skema yang diterapkan
+                            pelatih," pungkasnya.</p>
+                    </div>
+
+                    <section class="article-faq">
+                        <h3 class="section-heading">Pertanyaan Terkait</h3>
+
+                        <div class="faq-container">
+                            <details class="faq-item">
+                                <summary>
+                                    <span>Bagaimana peran Marquinhos dalam membantu adaptasi Willian Pacho?</span>
+                                </summary>
+                                <div class="faq-content">
+                                    Marquinhos membantu Pacho sejak hari pertama, terutama dalam komunikasi menggunakan
+                                    bahasa Spanyol serta membimbingnya dalam pembacaan posisi dan antisipasi di
+                                    lapangan.
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>
+                                    <span>Apa alasan Pacho menyebut Marquinhos sebagai sosok luar biasa?</span>
+                                </summary>
+                                <div class="faq-content">
+                                    Karena Marquinhos memiliki mentalitas pemenang yang kuat dan sikap yang sangat
+                                    suportif terhadap pemain baru, menjadikannya contoh teladan di dalam skuad PSG.
+                                </div>
+                            </details>
+
+                            <details class="faq-item">
+                                <summary>
+                                    <span>Mengapa gaya permainan Luis Enrique menantang bagi Willian Pacho?</span>
+                                </summary>
+                                <div class="faq-content">
+                                    Gaya permainan Enrique sangat fokus pada dominasi bola dan transisi positif, yang
+                                    berbeda dari pengalaman Pacho sebelumnya, sehingga memerlukan penyesuaian posisi
+                                    tubuh dan orientasi lapangan yang spesifik.
+                                </div>
+                            </details>
                         </div>
-                    </a>
+                    </section>
 
-                </div>
+                    <!--BERITA TERKAIT-->
 
+                    <section class="related-news">
+                        <h3 class="section-heading">Berita Terkait</h3>
+                        <div class="related-grid">
+                            <a href="/berita/pacho-puji-marquinhos" class="related-item">
+                                <img src="https://media.psg.fr/image/upload/c_fill,ar_3:2,w_1921,g_auto/f_avif/q_75/v1/22_RENNES_pacho_bzf2af?_a=BAVMn6B00"
+                                    alt="Willian Pacho">
+                                <h4>Willian Pacho Puji Marquinhos: "Ia Sosok yang Luar Biasa"</h4>
+                            </a>
+
+                            <a href="/berita/psg-kalah-monaco-luis-enrique-analisis" class="related-item">
+                                <img src="https://www.lequipe.fr/_medias/img-photo-jpg/luis-enrique-ce-vendredi-lors-de-psg-monaco-1-3-b-papon-l-equipe/1500000002410803/0:0,2000:1333-1200-800-75/3a57d.jpg"
+                                    alt="Luis Enrique">
+                                <h4>Analisis: Enrique Akui Tim Tidak Presisi Saat Lawan Monaco</h4>
+                            </a>
+
+                            <a href="/berita/psg-vs-chelsea-luis-enrique-fokus" class="related-item">
+                                <img src="https://www.barrons.com/asset/external-media/afp/AFP2356782962114478226139345903365321909514---1.jpg"
+                                    alt="UCL Focus">
+                                <h4>Alihkan Fokus ke UCL, Enrique Siapkan Strategi Khusus Lawan Chelsea</h4>
+                            </a>
+                        </div>
+                    </section>
+                </article>
             </section>
 
-        </main>
 
 
-        <!-- Right Sidebar -->
-        <aside
-            class="hidden xl:block w-80 flex-shrink-0 px-5 py-6 sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto border-l border-psg-border">
 
-            <div
-                class="bg-gradient-to-b from-psg-card to-psg-bg/80 rounded-2xl p-6 border border-psg-border/60 shadow-xl shadow-black/30">
 
-                <h2 class="text-xl font-bold text-psg-red mb-4 pb-2 border-b border-psg-red/40">
-                    Berita Terbaru
-                </h2>
 
-                <ul class="space-y-4 text-sm">
 
-                    <li>
-                        <a href="#" class="block hover:bg-psg-bg/60 p-3 rounded-lg transition">
-                            <p class="font-semibold text-psg-text leading-snug">
-                                PSG vs Chelsea: Luis Enrique Fokus ke Liga Champions
-                            </p>
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="#" class="block hover:bg-psg-bg/60 p-3 rounded-lg transition">
-                            <p class="font-semibold text-psg-text leading-snug">
-                                PSG Kalah dari Monaco, Enrique Akui Tim Kurang Presisi
-                            </p>
-                        </a>
-                    </li>
+            <!--SIDEBAR-->
+            <aside class="sidebar-right">
+                <div class="card-widget">
+                    <h3 class="widget-title">Update Pemain PSG</h3>
 
-                    <li>
-                        <a href="#" class="block hover:bg-psg-bg/60 p-3 rounded-lg transition">
-                            <p class="font-semibold text-psg-text leading-snug">
-                                Nuno Mendes Akui PSG Belum di Level Terbaik
-                            </p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="block hover:bg-psg-bg/60 p-3 rounded-lg transition">
-                            <p class="font-semibold text-psg-text leading-snug">
-                                Daniel Riolo Kritik Performa PSG Usai Kekalahan
-                            </p>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="block hover:bg-psg-bg/60 p-3 rounded-lg transition">
-                            <p class="font-semibold text-psg-text leading-snug">
-                                Adrien Rabiot Sebut Ibrahimovic Sosok Inspiratif
-                            </p>
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- tombol lihat semua -->
-                <div class="mt-6 text-center">
-                    <a href="#" class="text-sm font-semibold text-psg-red hover:underline">
-                        Lihat Semua Berita →
+                    <a href="#" class="player-row-link">
+                        <div class="player-item-news">
+                            <div class="player-info-box">
+                                <div class="avatar-wrapper">
+                                    <img src="https://www.lequipe.fr/_medias/img-photo-jpg/ousmane-dembele-face-au-bayern-munich-1-2-le-4-novembre-e-garnier-l-equipe/1500000002317948/0:0,2000:1333-828-552-75/f3168"
+                                        class="player-avatar-news" alt="Ousmane Dembélé">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="player-name-news">Ousmane Dembélé</span>
+                                    <span class="player-position">Penyerang</span>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
                     </a>
+
+                    <a href="#" class="player-row-link">
+                        <div class="player-item-news">
+                            <div class="player-info-box">
+                                <div class="avatar-wrapper">
+                                    <img src="https://www.lequipe.fr/_medias/img-photo-jpg/vitinha-a-signe-une-saison-2024-2025-etincelante-avec-le-psg-s-mantey-l-equipe/1500000002278290/195:0,1528:1333-828-828-75/5e2dd"
+                                        class="player-avatar-news" alt="Luis Enrique">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="player-name-news">Vitinha</span>
+                                    <span class="player-position">Gelandang</span>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-dim" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </div>
+                    </a>
+
+                    <a href="/pemain" class="show-more-news">Lihat Skuad Lengkap</a>
                 </div>
 
-            </div>
 
+                <div class="card-widget mt-4">
+                    <div class="card-widget mt-4">
+                        <h3 class="widget-title">Berita Terbaru</h3>
+
+                        <a href="/berita/psg-chelsea-barcola-luis-enrique" class="news-sidebar-item">
+                            <div class="news-sidebar-content">
+                                <p class="news-sidebar-title">PSG vs Chelsea: Barcola Bongkar Strategi Luis Enrique di
+                                    Liga Champions</p>
+                            </div>
+                        </a>
+
+                        <a href="/berita/pacho-puji-marquinhos" class="news-sidebar-item">
+                            <div class="news-sidebar-content">
+                                <p class="news-sidebar-title">Willian Pacho Puji Marquinhos Sebagai Sosok Luar Biasa di
+                                    Lini Belakang</p>
+                            </div>
+                        </a>
+
+                        <a href="/berita/nuno-mendes-akui-psg-tak-di-level-terbaik-usai-kalah-dari-monaco"
+                            class="news-sidebar-item">
+                            <div class="news-sidebar-content">
+                                <p class="news-sidebar-title">Nuno Mendes Akui Performa PSG Menurun Setelah Takluk dari
+                                    AS Monaco</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="news-sidebar-item">
+                            <div class="news-sidebar-content">
+                                <p class="news-sidebar-title">Patrice Evra: Luis Enrique Adalah Sosok Ideal untuk
+                                    Manchester United</p>
+                            </div>
+                        </a>
+
+                        <a href="#" class="news-sidebar-item border-none">
+                            <div class="news-sidebar-content">
+                                <p class="news-sidebar-title">Luis Enrique Tanggapi Santai Kritik Tajam Terhadap
+                                    Performa PSG</p>
+                            </div>
+                        </a>
+
+                        <a href="/berita" class="show-more-news">Lihat Semua Berita</a>
+                    </div>
+            </aside>
+
+        </div>
         </aside>
-    </div>
 
-
-    <!-- Footer Biasa (statis di bawah konten, desain lebih baik) -->
-    <!-- ================== FOOTER 3 KOLOM ================== -->
-    <footer class="bg-psg-darkblue/90 border-t border-psg-border mt-auto mb-8 md:mb-0">
-        <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-                <!-- Kolom 1 -->
-                <div class="text-center md:text-left">
-                    <h3 class="text-xl font-bold text-psg-text mb-5">Berita PSG</h3>
-                    <p class="text-psg-gray leading-relaxed mb-6">
-                        Portal berita independen khusus Paris Saint-Germain.<br>
-                        Update harian: berita terkini, jadwal, skor, transfer, dan analisis mendalam untuk penggemar di
-                        Indonesia.
-                    </p>
-                    <p class="text-sm text-psg-gray/80">
-                        © 2026 Berita PSG. Semua hak cipta dilindungi.
-                    </p>
+        <footer class="article-footer-main">
+            <div class="footer-content-grid">
+                <div class="footer-col branding">
+                    <div class="footer-logo-box">
+                        <img src="/img/logo-psg.png" alt="PSG Logo" class="footer-logo-img">
+                        <span class="footer-brand-text">BERITA PSG</span>
+                    </div>
+                    <p class="footer-tagline">Sumber informasi terkini dan terpercaya mengenai Paris Saint-Germain dalam
+                        Bahasa Indonesia.</p>
+                    <div class="footer-social-icons">
+                    </div>
                 </div>
 
-                <!-- Kolom 2 -->
-                <div class="text-center md:text-left">
-                    <h4 class="text-lg font-semibold text-psg-text mb-5">Tautan Penting</h4>
-                    <ul class="space-y-4 text-psg-gray leading-relaxed">
-                        <li><a href="/tentang-kami" class="hover:text-psg-red transition hover:underline">Tentang
-                                Kami</a></li>
-                        <li><a href="/pedoman-media" class="hover:text-psg-red transition hover:underline">Pedoman Media
-                                Siber</a>
-                        </li>
-                        <li><a href="/kebijakan-privasi" class="hover:text-psg-red transition hover:underline">Kebijakan
-                                Privasi</a>
-                        </li>
-                        <li><a href="/kontak" class="hover:text-psg-red transition hover:underline">Hubungi Kami</a>
-                        </li>
+                <div class="footer-col">
+                    <h4 class="footer-title">Navigasi</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="/berita">Berita Terbaru</a></li>
+                        <li><a href="/jadwal">Jadwal Pertandingan</a></li>
+                        <li><a href="/klasemen">Klasemen Ligue 1</a></li>
+                        <li><a href="/pemain/">Skuad Pemain</a></li>
+                        <li><a href="/transfer">Bursa Transfer</a></li>
                     </ul>
                 </div>
 
-                <!-- Kolom 3 -->
-                <div class="text-center md:text-left">
-                    <h4 class="text-lg font-semibold text-psg-text mb-5">Ikuti Kami</h4>
-                    <p class="text-psg-gray leading-relaxed mb-6">
-                        Dapatkan update langsung di media sosial kami.
-                    </p>
-                    <div class="flex justify-center md:justify-start gap-6">
-                        <a href="#" aria-label="Twitter Berita PSG"
-                            class="text-psg-gray hover:text-psg-red transition transform hover:scale-125 duration-300">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C2.44 20.88 4.99 22 7.7 22c9.3 0 14.38-7.72 14.38-14.41 0-.22 0-.44-.01-.66A10.3 10.3 0 0022.46 6z" />
-                            </svg>
-                        </a>
-                        <a href="#"
-                            class="text-psg-gray hover:text-psg-red transition transform hover:scale-125 duration-300">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Instagram Berita PSG"
-                            class="text-psg-gray hover:text-psg-red transition transform hover:scale-125 duration-300">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.25-.75a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z" />
-                            </svg>
-                        </a>
-                    </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Bantuan</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="/tentang-kami">Tentang Kami</a></li>
+                        <li><a href="/kontak">Kontak Redaksi</a></li>
+                        <li><a href="/kebijakan-privasi">Kebijakan Privasi</a></li>
+                        <li><a href="#">Persyaratan Layanan</a></li>
+                        <li><a href="#">Kebijakan Cookie</a></li>
+                    </ul>
                 </div>
             </div>
+
+            <div class="footer-bottom-bar">
+                <p>&copy; 2026 BERITA PSG. Dikembangkan untuk komunitas fans Indonesia.</p>
+            </div>
+        </footer>
+
         </div>
-    </footer>
-    </div>
+    </main>
 
 
-    <!-- Bottom Nav Mobile  -->
-    <nav class="fixed bottom-0 left-0 right-0 h-16 bg-psg-darkblue border-t border-psg-border z-50 md:hidden">
-        <div class="flex justify-around items-center h-14 text-psg-gray">
-            <a href="/" class="flex flex-col items-center p-2 hover:text-psg-red">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-home">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-                </svg>
-                <span class="text-xs mt-1">Beranda</span>
-            </a>
-            <a href="/jadwal" class="flex flex-col items-center p-2 hover:text-psg-red">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-clock">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M10.5 21h-4.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3" />
-                    <path d="M16 3v4" />
-                    <path d="M8 3v4" />
-                    <path d="M4 11h10" />
-                    <path d="M14 18a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
-                    <path d="M18 16.5v1.5l.5 .5" />
-                </svg>
-                <span class="text-xs mt-1">Jadwal</span>
-            </a>
-            <a href="/berita" class="flex flex-col items-center p-2 hover:text-psg-red">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="icon icon-tabler icons-tabler-outline icon-tabler-news">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path
-                        d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" />
-                    <path d="M8 8l4 0" />
-                    <path d="M8 12l4 0" />
-                    <path d="M8 16l4 0" />
-                </svg>
-                <span class="text-xs mt-1">Berita</span>
-            </a>
-        </div>
+
+    <nav class="mobile-nav-bottom">
+        <a href="/" class="nav-item-mobile active">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 10l9-7 9 7" />
+                <path d="M5 10v10a1 1 0 001 1h12a1 1 0 001-1V10" />
+            </svg>
+            <span>Beranda</span>
+        </a>
+
+        <a href="/jadwal" class="nav-item-mobile">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 2v4M16 2v4"></path>
+                <path d="M3 10h18"></path>
+                <path d="M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"></path>
+                <path d="M11 14h2M12 14v3"></path>
+            </svg>
+            <span>Jadwal</span>
+        </a>
+
+        <a href="/berita" class="nav-item-mobile">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 12h8">
+                </path>
+            </svg>
+            <span>Berita</span>
+        </a>
     </nav>
-    <script src="/js/main.js"></script>
+
+    <script src="/js/main.js" defer></script>
 </body>
 
 </html>

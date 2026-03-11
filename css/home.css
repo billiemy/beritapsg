@@ -1,30 +1,21 @@
 :root {
-    /* Background: Biru sangat gelap (Hampir Hitam) */
     --x-bg: #03080f;
-
-    /* Teks Utama: Putih bersih agar kontras tinggi */
     --x-text: #ffffff;
-
-    /* Teks Dim: Abu-abu kebiruan yang lebih redup */
     --x-dim: #5c6d85;
-
-    /* Border: Biru gelap yang sangat tipis dan subtle */
     --x-border: #112236;
-
-    /* Warna Aksen: Merah PSG yang lebih dalam (tidak terlalu menyala) */
     --x-blue: #b01c13;
-
-    /* Widget: Navy gelap agar menyatu dengan background */
     --x-widget: #08121e;
-
-    /* Tambahan: Warna Hover (Biru Gelap) */
     --psg-hover: rgba(0, 65, 112, 0.2);
+    --font-main: 'Inter', sans-serif;
 }
 
 .psg-body {
+    font-family: var(--font-main);
     background-color: var(--x-bg);
     color: var(--x-text);
     margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* --- HEADER --- */
